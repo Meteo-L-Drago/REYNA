@@ -18,5 +18,10 @@ const appJson = require('./app.json');
 module.exports = {
   expo: {
     ...appJson.expo,
+    extra: {
+      eas: {
+        projectId: '1ea29505-baf2-4fc7-adf4-bb658d046ce3',
+      },
+    },
   },
 };

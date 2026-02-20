@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --accent: #BA943A;
+  --accent-hover: #a68333;
+  --accent-light: rgba(186, 148, 58, 0.08);
+  --accent-light-hover: rgba(186, 148, 58, 0.14);
+  --border: #e7e5e4;
+  --border-focus: #BA943A;
+  --input-bg: #ffffff;
+  --card-bg: #ffffff;
+  --muted: #78716c;
+  --muted-bg: #f5f5f4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-script: var(--font-reyna-script);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Logo-Schreibschrift */
+.font-reyna {
+  font-family: var(--font-reyna-script), "Brush Script MT", "Segoe Script", cursive;
+}
+
+/* Professionelle Eingabefelder */
+.input-field {
+  @apply w-full rounded-lg border bg-white px-4 py-2.5 text-sm text-stone-900 transition-colors;
+  border-color: var(--border);
+  font-family: inherit;
+}
+.input-field::placeholder {
+  color: var(--muted);
+}
+.input-field:hover {
+  border-color: #d6d3d1;
+}
+.input-field:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 2px rgba(186, 148, 58, 0.15);
+}
+
+/* Professionelle Select-Felder */
+.select-field {
+  @apply w-full cursor-pointer appearance-none rounded-lg border bg-white px-4 py-2.5 text-sm text-stone-900 transition-colors;
+  border-color: var(--border);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2378716c' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 2.5rem;
+}
+.select-field:hover {
+  border-color: #d6d3d1;
+}
+.select-field:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 2px rgba(186, 148, 58, 0.15);
+}
+
+/* Primär-Button */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all;
+  background-color: var(--accent);
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+  transform: translateY(-0.5px);
+  box-shadow: 0 2px 8px rgba(186, 148, 58, 0.3);
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Sekundär-Button (Outline) */
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium text-stone-700 transition-colors;
+  border-color: var(--border);
+  background-color: white;
+}
+.btn-secondary:hover {
+  background-color: var(--muted-bg);
+  border-color: #d6d3d1;
+}
+
+/* Ghost-Button */
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-stone-600 transition-colors;
+}
+.btn-ghost:hover {
+  background-color: var(--accent-light);
+  color: var(--accent);
+}
+
+/* Karten */
+.card {
+  @apply overflow-hidden rounded-xl border bg-white shadow-sm;
+  border-color: var(--border);
+}
+
+.card-header {
+  @apply border-b px-6 py-4;
+  border-color: var(--border);
+  background-color: var(--muted-bg);
+}
+
+/* Tabellen */
+.table-professional thead tr {
+  @apply border-b bg-stone-50/80;
+  border-color: var(--border);
+}
+.table-professional th {
+  @apply px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-stone-500;
+}
+.table-professional tbody tr {
+  @apply border-b transition-colors;
+  border-color: #f5f5f4;
+}
+.table-professional tbody tr:hover {
+  background-color: rgba(250, 250, 249, 0.8);
+}
+.table-professional td {
+  @apply px-5 py-4 text-sm text-stone-700;
+}
+
+/* Nav-Links */
+.nav-link {
+  @apply flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-200;
+}
+.nav-link:hover {
+  background-color: var(--accent-light);
+  color: var(--accent);
+}
+.nav-link.active {
+  background-color: var(--accent-light-hover);
+  color: var(--accent);
+}
+
+/* Badge/Tag */
+.badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+}
