@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "REYNA",
+    "slug": "REYNA",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": false,
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "REYNA nutzt die Foto-Bibliothek für Produktbilder.",
+          "cameraPermission": "REYNA nutzt die Kamera für Produktbilder."
+        }
+      ]
+    ],
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.reyna.app",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "REYNA nutzt die Foto-Bibliothek für Produktbilder.",
+        "NSCameraUsageDescription": "REYNA nutzt die Kamera für Produktbilder."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.reyna.app",
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

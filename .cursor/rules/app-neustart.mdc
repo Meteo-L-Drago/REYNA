@@ -1,0 +1,19 @@
+---
+description: Nach Code-Änderungen die Reyna-App neu starten
+alwaysApply: true
+---
+
+# App-Neustart nach Änderungen
+
+Nach jeder Änderung am Reyna-Projekt die App neu starten, damit Änderungen sichtbar werden:
+
+1. **Expo mit geleertem Cache starten:**
+   ```bash
+   cd /Users/serwanpolat/REYNA && source ~/.nvm/nvm.sh && nvm use 20 && npx expo start --clear --ios
+   ```
+
+2. **Als Hintergrundprozess ausführen** (is_background: true)
+
+3. **Node 20** verwenden (Expo SDK 54 benötigt Node 20+)
+
+4. Optional: Vorher laufende Prozesse beenden (Port 8081/8082)
