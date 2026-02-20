@@ -126,7 +126,7 @@ export default function DashboardPage() {
               <XAxis dataKey="date" tick={{ fontSize: 11 }} stroke="#78716c" />
               <YAxis tickFormatter={(v) => v + " €"} tick={{ fontSize: 11 }} stroke="#78716c" />
               <Tooltip
-                formatter={(value: number) => [value.toFixed(2) + " €", "Umsatz"]}
+                formatter={(value: number | undefined) => [(value ?? 0).toFixed(2) + " €", "Umsatz"]}
                 labelFormatter={(label) => "Datum: " + label}
               />
               <Bar dataKey="umsatz" fill={ACCENT} radius={[4, 4, 0, 0]} />
