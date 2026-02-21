@@ -28,13 +28,13 @@ export function useSupplierProducts(supplierId: string | null) {
       return;
     }
     setError(null);
-    const { data, err } = await supabase
+    const { data, error } = await supabase
       .from("products")
       .select("*")
       .eq("supplier_id", supplierId)
       .order("name");
-    if (err) {
-      setError(err.message);
+    if (error) {
+      setError(error.message);
       setLoading(false);
       return;
     }

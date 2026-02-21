@@ -36,17 +36,17 @@ export function useSupplierOrders(supplierId: string | null, withItems = false) 
     const select = withItems
       ? "id, total_amount, status, payment_method, created_at, gastronom_id, order_items(quantity, unit_price, products(name, unit))"
       : "id, total_amount, status, payment_method, created_at";
-    const { data, err } = await supabase
+    const { data, error } = await supabase
       .from("orders")
       .select(select)
       .eq("supplier_id", supplierId)
       .order("created_at", { ascending: false });
-    if (err) {
-      setError(err.message);
+    if (error) {
+      setError(error.message);
       setLoading(false);
       return;
     }
-    setOrders((data ?? []) as OrderWithItems[]);
+    setOrders((data ?? []) as unknown as OrderWithItems[]);
     setLoading(false);
   }, [supplierId, withItems]);
 
